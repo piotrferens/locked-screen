@@ -43,6 +43,9 @@ describe('PinVerification', () => {
     fireEvent.click(screen.getByTestId('pin-button-8'))
     expect(screen.getByTestId('pin-input')).toHaveValue(`${pinDot}${pinDot}8`)
     fireEvent.click(screen.getByTestId('pin-button-2'))
+    expect(screen.getByTestId('pin-input')).toHaveValue(
+      `${pinDot}${pinDot}${pinDot}2`,
+    )
     expect(screen.getByText('Invalid PIN')).toBeInTheDocument()
     expect(screen.getByText('Try again')).toBeInTheDocument()
     expect(screen.getByTestId('pin-input')).toHaveClass(
