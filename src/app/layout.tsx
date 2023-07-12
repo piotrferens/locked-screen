@@ -21,6 +21,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
           height={23}
           priority
           quality={100}
+          placeholder="blur"
         />
       </header>
       {children}
