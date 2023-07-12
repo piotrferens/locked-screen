@@ -20,6 +20,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
           width={290}
           height={23}
           priority
+          quality={100}
         />
       </header>
       {children}
