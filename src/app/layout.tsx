@@ -2,6 +2,7 @@ import './globals.css'
 
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
+import SantanderLogo from '../../public/santander-logo-horisontal.png'
 import { ReactNode } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,8 +16,8 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     <body className={inter.className}>
       <header className="py-4 px-6 border-t-3 border-t-red border-b border-b-gray-light">
         <Image
-          src={'/santander-logo-horisontal.png'}
-          alt={'santander logo'}
+          src={SantanderLogo}
+          alt="santander logo"
           width={290}
           height={23}
           priority

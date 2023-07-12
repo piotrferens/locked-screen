@@ -1,10 +1,12 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import { Heading } from '@/components/heading/heading';
-import { PinPanelWithNumbers } from '@/features/pin-verification/panel-with-numbers/panel-with-numbers';
-import { InputContainer } from '@/features/pin-verification/input/input';
+import CheckMarkIcon from '../../../../public/checkmark.svg'
 
-import { PinVerificationViewProps } from './view.types';
+import { Heading } from '@/components/heading/heading'
+import { PinPanelWithNumbers } from '@/features/pin-verification/panel-with-numbers/panel-with-numbers'
+import { InputContainer } from '@/features/pin-verification/input/input'
+
+import { PinVerificationViewProps } from './view.types'
 
 export const PinVerificationView = (props: PinVerificationViewProps) => {
   switch (props.view) {
@@ -14,15 +16,17 @@ export const PinVerificationView = (props: PinVerificationViewProps) => {
           <Heading className="text-center">Welcome</Heading>
           <div className="flex justify-center">
             <Image
-              src="/checkmark.svg"
+              src={CheckMarkIcon}
               alt="checkmark"
               width={250}
               height={250}
+              quality={100}
+              priority
               data-testid="checkmark-icon"
             />
           </div>
         </>
-      );
+      )
     case 'error':
       return (
         <>
@@ -33,7 +37,7 @@ export const PinVerificationView = (props: PinVerificationViewProps) => {
           <InputContainer value={props.value} isError />
           <PinPanelWithNumbers onNumberClick={props.onNumberClick} />
         </>
-      );
+      )
     case 'default':
     default:
       return (
@@ -42,6 +46,6 @@ export const PinVerificationView = (props: PinVerificationViewProps) => {
           <InputContainer value={props.value} />
           <PinPanelWithNumbers onNumberClick={props.onNumberClick} />
         </>
-      );
+      )
   }
-};
+}
